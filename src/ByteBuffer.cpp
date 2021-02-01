@@ -195,18 +195,6 @@ int ByteBuffer::getIntFromBack(){
 	return ret;
 }
 
-void ByteBuffer::putHex(uint8_t theByte) {
-	put('0'); put('x');
-    uint8_t hinybble=theByte>>4;
-    uint8_t lonybble=theByte & 0x0F;
-	uint8_t addend=0;
-	if (hinybble >= 0x0a) addend=7;
-	put(hinybble+48+addend);
-	if (lonybble >= 0x0a) addend=7;
-	else addend=0;
-	put(lonybble+48+addend);
-}
-
 //
 // Longs
 //
